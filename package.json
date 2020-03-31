@@ -1,6 +1,6 @@
 {
-  "name": "neon-website",
-  "homepage": "https://CityOfZion.github.io",
+  "name": "phantom-wallet-website",
+  "homepage": "https://getphantom.io",
   "version": "0.1.2",
   "private": true,
   "dependencies": {

@@ -6,7 +6,11 @@ html {
 }
 
 a {
-  color: #69e27e;
+  color: #17B0E7;
+}
+
+.App {
+  min-height: 100vh;
 }
 
 .App nav {
@@ -23,42 +27,11 @@ a {
   cursor: pointer;
 }
 
-#modal {
-  font-weight: bolder;
-  text-align: center;
-}
-
-#modal #close-icon {
-  position: absolute;
-  cursor: pointer;
-  left: 280px;
-  color: black;
-  opacity: 0.5;
-  margin-top: 5px;
-}
-
-#modal #qr-label {
-  padding-top: 40px;
-  font-family: "Source Sans Pro", sans-serif;
-  color: #171b24;
-  font-weight: lighter;
-  margin-top: -21px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  text-align: center;
-}
-
-#modal img {
-  width: 275px;
-}
-
 .landing-page-container {
-  min-height: 600px;
+  height: 90vh;
   display: flex;
-  background-image: url("./images/Background.png");
-  height: 85vh;
+  /*background-image: url("./images/screenshot.png");*/
+  background-color: #2C2E34;
   background-size: cover;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: normal;
@@ -85,10 +58,9 @@ a {
   flex-direction: column;
 }
 
-#details #neon-logo {
+#details #phantom-logo {
   max-width: 220px;
-  max-height: 70px;
-  margin-bottom: 15px;
+  max-height: 50px;
 }
 
 .landing-page-container #white {
@@ -115,8 +87,13 @@ a {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.landing-page-container .name {
+  font-weight: 400;
+  color: #fff;
+}
+
 .landing-page-container #download-options-container {
-  justify-content: space-between;
+  justify-content: space-around;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -127,7 +104,6 @@ a {
 
 .landing-page-container #screen-shot-container {
   background-size: contain;
-  background-image: url("./images/screenshot.png");
   width: 60vw;
   height: 60vh;
   background-repeat: no-repeat;
@@ -157,6 +133,7 @@ a {
   background-color: #394152;
   height: 42px;
   width: 140px;
+  margin: 0 auto;
 }
 
 #download-options-container #option {
@@ -173,6 +150,10 @@ a {
   font-weight: 400;
 }
 #download-options-container #size {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+}
+#download-options-container #extension {
   color: #e6ecf2;
   margin-bottom: 15px;
   font-size: 12px;
@@ -197,8 +178,9 @@ footer {
   font-weight: 100;
   color: white;
   font-size: 14px;
-  background-color: #171b24;
-  border-top: solid #5c6a84;
+  background-color: #333;
+  border-top: solid #17B0E7;
+  text-align: center;
 }
 
 footer #footer-content {
@@ -222,19 +204,9 @@ footer #donation {
   color: #ffffff;
 }
 
-footer #donation #modal-link {
-  display: flex;
-  align-items: center;
-  height: 25px;
-}
-
 footer #donation i::after {
   content: " ";
   white-space: pre;
-}
-
-footer #donation #modal-link > a {
-  text-decoration: none;
 }
 
 footer #donation #address {
@@ -242,7 +214,19 @@ footer #donation #address {
   color: rgba(255, 255, 255, 0.5);
   font-weight: 200;
   margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+footer #donation #made {
+  margin-top: 14px;
+  color: #ffffff;
+  font-weight: 400;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+footer #donation #made i {
+  color: red;
 }
 
 footer #social {
@@ -286,6 +270,29 @@ footer #social #description {
   font-weight: 400;
 }
 
+.main-container {
+  display: flex;
+  align-items: center;
+  width: 100%
+}
+
+.main-image, .main-title {
+  display: inline-block;
+  width: 50%;
+}
+
+.main-image {
+  margin-left: -10%;
+  text-align: center;
+}
+
+.main-title {
+  font-size: 1.8em;
+  font-weight: 800;
+  color: #ffffff;
+  margin-left: -10%;
+}
+
 @media (max-width: 1440px) {
   .landing-page-container {
     flex-shrink: 0;
@@ -311,8 +318,11 @@ footer #social #description {
   }
 }
 
-@media (max-width: 1024px) {
-  #details #neon-logo {
+@media (max-width: 1924px) {
+  .main-title {
+    width: 51%;
+  }
+  #details #phantom-logo {
     padding-top: 20px;
   }
   .landing-page-container {
@@ -320,7 +330,7 @@ footer #social #description {
   }
   .landing-page-container #screen-shot {
     background-size: contain;
-    background-image: url("./images/screenshot.png");
+    background-image: url("./images/phantom-wallet-background.png");
     max-height: 280px;
     min-height: 280px;
     /*width: 100%;*/
@@ -382,10 +392,6 @@ footer #social #description {
     padding: 20px;
     text-align: center;
   }
-  footer #modal-link {
-    justify-content: center;
-    color: #69e27e;
-  }
   footer #placeholder {
     display: none;
   }
@@ -403,8 +409,20 @@ footer #social #description {
 }
 
 @media (max-width: 768px) {
+  .main-title {
+    width: 90%;
+    margin-top: .3em;
+    margin-left: 0%;
+  }
+  .main-image {
+    margin-left: -10%;
+    text-align: center;
+  }
   .landing-page-container {
     height: auto;
+  }
+  .landing-page-container #description {
+    font-size: 14px;
   }
   .landing-page-container #details {
     justify-content: center;
@@ -451,9 +469,6 @@ footer #social #description {
   #download-options-container #size {
     font-size: 10px;
   }
-  .landing-page-container #description {
-    font-size: 20px;
-  }
   .landing-page-container #screen-shot {
     padding-bottom: 20px;
     min-height: 200px;
@@ -480,17 +495,10 @@ footer #social #description {
     display: flex;
     flex-direction: column;
   }
-  #modal img {
-    width: 250px;
-  }
-  #modal #close-icon {
-    left: 260px;
-  }
 }
 
 @media (min-width: 1920px) {
   .landing-page-container {
-    min-height: 1000px;
     flex-shrink: 0;
     flex-direction: column;
   }
@@ -499,17 +507,17 @@ footer #social #description {
     text-align: center;
     padding-left: 0;
   }
-  .landing-page-container #details #neon-logo {
+  .landing-page-container #details #phantom-logo {
     align-self: center;
   }
   .landing-page-container #screen-shot {
     background-size: contain;
-    background-image: url("./images/screenshot.png");
+    background-image: url(/static/media/phantom-wallet-background.8161e3bc.png);
     background-repeat: no-repeat;
     display: -ms-flexbox;
-    background-position: calc(50%) 50%;
-    display: flex;
-    flex: 1;
+    -ms-flex: 1 1;
+    background-position: center;
+    max-height: 400px;
   }
   .landing-page-container #download-options-container {
     max-width: 100%;

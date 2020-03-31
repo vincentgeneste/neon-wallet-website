@@ -2,21 +2,19 @@ import React, { Component } from "react";
 import rp from "request-promise";
 import LandingPage from "./components/landing-page/LandingPage";
 import Footer from "./components/footer/Footer";
-import QrModal from "./components/modal/QrModal";
 import { downloadOptions, latestRelease } from "./config";
 
 import "./App.css";
 
 class App extends Component {
   state = {
-    modalId: null,
     downloadOptions: downloadOptions,
     latestReleaseUrl: latestRelease
   };
 
   componentDidMount() {
     // NOTE: If this request fails the default downloadOptions from config.js will be leveraged.
-    rp("https://api.github.com/repos/CityOfZion/neon-wallet/releases/latest")
+    rp("https://api.github.com/repos/merl111/PhantomWallet/releases/latest")
       .then(response => {
         const parsed = JSON.parse(response);
         const mostRecentOptions = mapGithubResponseToOptions(
@@ -30,7 +28,7 @@ class App extends Component {
       })
       .catch(err => {
         console.error(
-          "Request to https://api.github.com/repos/CityOfZion/neon-wallet/releases/latest failed!",
+          "Request to https://api.github.com/repos/merl111/PhantomWallet/releases/latest failed!",
           err
         );
       });
@@ -39,33 +37,25 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {(this.state.modalId === "cozQRModal" ||
-          this.state.modalId === "neonWallet") && (
-          <QrModal
-            modalId={this.state.modalId}
-            handleModalClose={() => {
-              this.setState({ modalId: null });
-            }}
-          />
-        )}
         <LandingPage {...this.state} />
-        <Footer handleModalClick={id => this.setState({ modalId: id })} />
+        <Footer />
       </div>
     );
   }
 }
 
 function mapGithubResponseToOptions(data, downloadOptions) {
-  function generateSizeString(bytes, fileExt) {
-    return `${(bytes / 1000000).toFixed(2)} MB (Neon.${fileExt})`;
+  function generateSizeString(bytes) {
+    return `${(bytes / 1000000).toFixed(2)} MB`;
   }
 
   function findAndMapOption(option) {
     const asset = data.assets.find(
-      asset => asset.name.split(".").lastIndexOf(option.fileExtension) > 0
+      asset => asset.name.includes(option.fileExtension)
     );
     option.href = asset.browser_download_url;
-    option.size = generateSizeString(asset.size, option.fileExtension);
+    option.size = generateSizeString(asset.size);
+    option.extension = option.fileExtension;
     return option;
   }
 

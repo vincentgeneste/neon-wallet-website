@@ -1,72 +1,25 @@
 import React from "react";
 
-import githubIcon from "../../images/github.png";
-import fbIcon from "../../images/facebook.png";
-import discordIcon from "../../images/discord.png";
-import redditIcon from "../../images/reddit.png";
-
 const donationLinks = [
   {
-    display: "Donate to City of Zion",
-    address: "AXSoNQEKjmqPBNPg5cNrHyWivfjok3Vj9D",
-    modalId: "cozQRModal"
-  },
-  {
-    display: "Donate to NEON wallet creators",
-    address: "Adr3XjZ5QDzVJrWvzmsTTchpLRRGSzgS5A",
-    modalId: "neonWallet"
+    display: "Want to support us?",
+    address: "P2K61GfcUbfWqCur644iLECZ62NAefuKgBkB6FrpMsqYHv6"
   }
 ];
 
-const Donations = ({ handleModalClick }) =>
-  donationLinks.map(e => (
-    <div key={e.modalId} id="donation">
+const Donations = () =>
+  donationLinks.map((e, index) => (
+    <div key={index} id="donation">
       <div id="description">{e.display}</div>
       <div id="address">{e.address}</div>
-      <div id="modal-link">
-        <a
-          href=""
-          target="blank"
-          onClick={event =>
-            event.preventDefault() || handleModalClick(e.modalId)
-          }
-        >
-          <i className="fa fa-external-link-square" aria-hidden="true" />
-          Launch QR Code
-        </a>
-      </div>
+      <div id="made">Made with <i className='fa fa-heart'></i>for Phantasma</div>
     </div>
   ));
 
-const Footer = ({ handleModalClick }) => (
+const Footer = () => (
   <footer>
     <div id="footer-content">
-      <Donations handleModalClick={handleModalClick} />
-      <div id="social">
-        <div id="description">Join us at City of Zion!</div>
-        <div id="social-links">
-          <a
-            href="https://github.com/CityOfZion/neon-wallet"
-            id="link"
-            target="blank"
-          >
-            Github <img alt="github-social-icon" src={githubIcon} />
-          </a>
-          <a
-            href="https://www.facebook.com/CityOfZionOfficial"
-            id="link"
-            target="blank"
-          >
-            Facebook <img alt="facebook-social-icon" src={fbIcon} />
-          </a>
-          <a href="https://discord.gg/R8v48YA" id="link" target="blank">
-            Discord <img alt="discord-social-icon" src={discordIcon} />
-          </a>
-          <a href="https://www.reddit.com/r/NEO/" id="link" target="blank">
-            Reddit <img alt="reddit-social-icon" src={redditIcon} />
-          </a>
-        </div>
-      </div>
+      <Donations />
     </div>
   </footer>
 );

@@ -6,6 +6,7 @@ const DownloadOptions = ({ options }) => (
       <div key={option.id} id="option">
         <div id="display">{option.display}</div>
         <div id="size">{option.size}</div>
+        <div id="extension">{option.extension}</div>
         <DownloadButton downloadLink={option.href} icon={option.icon} />
       </div>
     ))}

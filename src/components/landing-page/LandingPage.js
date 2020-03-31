@@ -1,19 +1,23 @@
 import React from "react";
 import DownloadOptions from "./DownloadOptions";
-import logo from "../../images/Neon_Logo_Dark.svg";
+import logo from "../../images/phantom-wallet.png";
 
 const LandingPage = props => (
   <div className="landing-page-container">
     <div id="details-container">
       <div id="details">
-        <img id="neon-logo" src={logo} alt="neon-logo" />
+        <div className="main-container">
+          <div className="main-image"><img id="phantom-logo" src={logo} alt="phantom-logo" /></div>
+          <div className="main-title">
+              <span className="wallet-title">PHANTOM WALLET</span>
+          </div>
+        </div>
         <div id="description">
-          An open source <span id="white"> cross-platform light wallet</span>
-          for the NEO blockchain available on Windows, Mac OS, and Linux.
+          An extended wallet for the <span className="name">Phantasma blockchain</span><br/>Available on Windows, Mac OS, and Linux
         </div>
         <DownloadOptions options={props.downloadOptions} />
         <a href={props.latestReleaseUrl} target="blank">
-          Latest release information and checksum hashes.
+          Check the latest release on GitHub
         </a>
       </div>
     </div>
@@ -22,14 +26,5 @@ const LandingPage = props => (
     </div>
   </div>
 );
-
-// NOT IN USE
-// const Navigation = () => (
-//   <nav>
-//     <a href="https://cityofzion.io/">
-//       <img src={coz} />
-//     </a>
-//   </nav>
-// );
 
 export default LandingPage;

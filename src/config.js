@@ -7,39 +7,30 @@ export const downloadOptions = [
     id: "WINDOWS",
     display: "Windows",
     href:
-      "https://github.com/CityOfZion/neon-wallet/releases/download/0.1.1/Neon.Setup.0.1.1.Windows.exe",
+      "https://github.com/merl111/PhantomWallet/releases/download/v0.9.0/PhantomWallet-0-9-0-windows.zip",
     icon: windowsIcon,
-    size: "134.56 MB (Neon.exe)",
-    fileExtension: "exe"
+    size: "33.7 MB",
+    fileExtension: "PhantomWallet-0-9-0-windows.zip"
   },
   {
     id: "MAC_OS",
     display: "Mac OS",
     href:
-      "https://github.com/CityOfZion/neon-wallet/releases/download/0.1.1/Neon-0.1.1.Mac.dmg",
+      "https://github.com/merl111/PhantomWallet/releases/download/v0.9.0/PhantomWallet-0-9-0-osx.zip",
     icon: appleIcon,
-    size: "134.56 MB (Neon.dmg)",
-    fileExtension: "dmg"
+    size: "30.88 MB",
+    fileExtension: "PhantomWallet-0-9-0-osx.zip"
   },
   {
     id: "LINUX_DEB",
     display: "Linux",
     href:
-      "https://github.com/CityOfZion/neon-wallet/releases/download/0.1.1/Neon_0.1.1_amd64.Linux.deb",
+      "https://github.com/merl111/PhantomWallet/releases/download/v0.9.0/PhantomWallet-0-9-0-linux.zip",
     icon: linuxIcon,
-    size: "134.56 MB (Neon.deb)",
-    fileExtension: "deb"
-  },
-  {
-    id: "LINUX_APPIMAGE",
-    display: "Linux",
-    href:
-      "https://github.com/CityOfZion/neon-wallet/releases/download/0.1.1/Neon-0.1.1-x86_64.Linux.AppImage",
-    icon: linuxIcon,
-    size: "134.56 MB (Neon.AppImage)",
-    fileExtension: "AppImage"
+    size: "31.91 MB",
+    fileExtension: "PhantomWallet-0-9-0-linux.zip"
   }
 ];
 
 export const latestRelease =
-  "https://github.com/CityOfZion/neon-wallet/releases/tag/2.0.0";
+  "https://github.com/merl111/PhantomWallet/releases/tag/v0.9.0";
