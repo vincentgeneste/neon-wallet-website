@@ -12,8 +12,3 @@ This application is built to automatically track against https://api.github.com/
 
 ## Development
 `npm run start` will start the webpack dev server and open a browser tab at http://localhost:3000/
-
-## Deployment
-`npm run build` will compile a production bundle and output to `/build`
-
-`npm run deploy` will push a production bundle to the `gh-pages` branch of this application which update https://getphantom.io/.
